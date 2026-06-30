@@ -10,7 +10,8 @@
 }
 
 .item-box {
-  background-color: #FFF;
+  background-color: #fff;
+  box-sizing: border-box;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -19,7 +20,7 @@
   align-items: center;
 }
 
-.item-box>.name {
+.item-box > .name {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
@@ -40,22 +41,21 @@
   flex-direction: column;
 }
 
-.item-price-box>.item-price {
+.item-price-box > .item-price {
   font-size: 4vh;
   font-weight: bold;
 }
 
-.item-price-box>.item-postage {
+.item-price-box > .item-postage {
   font-size: 16px;
 }
-
 
 .item-red-btn {
   text-align: center;
   background-color: #ea352d;
   font-size: 24px;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   margin: 20px 0px;
   padding: 2vh 10vw;
 }
@@ -138,18 +138,19 @@
   margin-right: 5px;
 }
 
-
 /* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
+  box-sizing: border-box;
+  width: 70vw;
+  min-width: 1200px;
   background-color: #fff;
-  margin: 5vh 0;
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .comment-text {
-  width: 100%;
+  width: 80%;
   height: 100px;
   padding: 10px;
   border: solid 2px #dedede;
@@ -157,22 +158,39 @@
 }
 
 .comment-warn {
-  padding: 10px;
+  padding: 10px 106px;
   font-size: 14px;
   margin: 10px 0px;
-  text-align: left;
+  text-align: right;
 }
 
 .comment-btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: #3ccace;
+  border: 1px solid #3ccace;
   color: #fff;
-  width: 50%;
+  width: 25%;
   min-width: 150px;
   font-size: 18px;
   border-radius: 100px;
-  margin-bottom: 2vh;
+  margin: 0 7vw 2vh auto;
+  display: block;
+}
+
+.comment-text-all {
+  font-size: 30px;
+  text-align: left;
+  margin: 5px 100px;
+}
+
+.comment-user {
+  text-align: left;
+  margin: 5px 145px;
+}
+
+.comment-content {
+  text-align: left;
+  margin: 5px 165px;
 }
 
 .comment-flag {
@@ -187,20 +205,19 @@
 .links {
   display: flex;
   justify-content: space-between;
-  width: 50vw;
-
+  width: 80vw;
 }
 
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
-  color: #3CCACE;
+  color: #3ccace;
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
+  color: #3ccace;
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;

@@ -75,27 +75,35 @@
   </div>
   <%# コメント %>
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
+    <%= form_with(model: [@item, @comment], local: true) do |f| %>
+      <%= f.text_area :content, placeholder: "例）即時購入可能でしょうか？", class: "comment-text" %>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-          </button>
-        </form>
-      </div>
-      <div class="links">
-        <a href="#" class="change-item-btn">
-          ＜ 前の商品
-        </a>
-        <a href="#" class="change-item-btn">
-          後ろの商品 ＞
-        </a>
-      </div>
-      <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+      <%= f.submit "コメントする", class: "comment-btn" %>
+    <% end %>
+    <div class="comments">
+      <p class="comment-text-all">💭コメント一覧</p>
+      <% @comments.each do |comment| %>
+        <p class="comment-user">
+          <strong><%= link_to comment.user.nickname %>:</strong>
+        </p>
+        <p class="comment-content">
+          <%= comment.content %>
+        </p>
+      <% end %>
     </div>
-    <%= render "shared/footer" %>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+</div>
+<%= render "shared/footer" %>
